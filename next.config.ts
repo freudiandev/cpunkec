@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // experimental: {
+  //   appDir: true,
+  // },
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  basePath: '',
+  trailingSlash: true,
 };
 
-export default nextConfig;
+module.exports = nextConfig;

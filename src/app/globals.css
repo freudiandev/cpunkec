@@ -19,8 +19,74 @@
   }
 }
 
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Neon gradient text */
+.neon-gradient {
+  background: linear-gradient(90deg, #ff71ce, #01cdfe, #b967ff, #05f7ff, #fffaa8);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neon-pulse 2s infinite alternate;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+  animation: glitch 1.5s infinite linear alternate;
+}
+.glitch-logo {
+  letter-spacing: 0.15em;
+  animation: glitch 1.2s infinite linear alternate;
+}
+.animate-glitch {
+  animation: glitch 1.5s infinite linear alternate;
+}
+
+/* Neon button */
+.btn-neon-glitch {
+  background: #171717;
+  color: #fff;
+  border: 2px solid #ff71ce;
+  box-shadow: 0 0 8px #ff71ce, 0 0 16px #01cdfe;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  transition: box-shadow 0.2s, border-color 0.2s, color 0.2s;
+  animation: neon-pulse 2s infinite alternate;
+}
+.btn-neon-glitch:hover, .btn-neon-glitch:focus {
+  border-color: #01cdfe;
+  box-shadow: 0 0 16px #01cdfe, 0 0 32px #b967ff;
+  color: #01cdfe;
+}
+
+/* Pixel art and retro grid */
+.pixel-art {
+  font-family: 'Press Start 2P', monospace, var(--font-geist-mono);
+  font-size: 1.1em;
+  color: #ff71ce;
+  text-shadow: 0 0 2px #01cdfe, 0 0 4px #b967ff;
+}
+.text-pixel {
+  font-family: 'Press Start 2P', monospace, var(--font-geist-mono);
+}
+.retro-grid {
+  background-image: repeating-linear-gradient(0deg, #222 0 2px, transparent 2px 40px), repeating-linear-gradient(90deg, #222 0 2px, transparent 2px 40px);
+  background-size: 40px 40px;
+}
+
+/* Nav link glitch hover */
+.nav-link {
+  color: #fff;
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link:focus {
+  color: #ff71ce;
+  text-shadow: 0 0 8px #ff71ce, 0 0 16px #01cdfe;
 }
