@@ -2,19 +2,20 @@ import Link from "next/link";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
-  { href: "/(sections)/clases", label: "Clases" },
-  { href: "/(sections)/materiales", label: "Materiales" },
-  { href: "/(sections)/servicios", label: "Servicios" },
-  { href: "/(sections)/portafolio", label: "Portafolio" },
-  { href: "/(sections)/bolsa", label: "Bolsa Tarki 1" },
-  { href: "/(sections)/sobre-mi", label: "Sobre mí" },
+  { href: "/clases", label: "Clases" },
+  { href: "/materiales", label: "Materiales" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/portafolio", label: "Portafolio" },
+  { href: "/bolsa", label: "Bolsa Empleo Tarqui 1" },
+  { href: "/sobre-mi", label: "Sobre Nosotros" },
 ];
 
 export default function Header() {
   return (
     <header className="w-full py-4 px-2 md:px-8 flex items-center justify-between bg-black/80 backdrop-blur border-b border-fuchsia-700/30 relative z-50">
-      <Link href="/" className="text-2xl font-extrabold neon-gradient glitch-logo tracking-widest select-none" aria-label="Inicio Ciberpunk Ecuador">
-        Ciberpunk Ecuador
+      <Link href="/" className="flex items-center gap-3 select-none" aria-label="Inicio Ciberpunk Ecuador">
+        <img src="/1.png" alt="Logo CiberPunk Ecuador" className="w-10 h-10 rounded-full border-2 border-fuchsia-400 bg-white object-cover" />
+        <span className="text-2xl font-extrabold tracking-widest text-zinc-100">CiberPunk Ecuador</span>
       </Link>
       <nav aria-label="Navegación principal" className="flex gap-2 md:gap-4">
         {navLinks.map((link) => (

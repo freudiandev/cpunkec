@@ -55,10 +55,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-cyberpunk-glitch.png",
+        url: "/1.png",
         width: 1200,
         height: 630,
-        alt: "Ciberpunk Ecuador glitch cyberpunk vaporwave logo",
+        alt: "CiberPunk Ecuador logo",
       },
     ],
   },
@@ -69,20 +69,20 @@ export const metadata: Metadata = {
       "Desarrollo de páginas web, clases de programación y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA avanzada (Claude, GPT, Gemini).",
     images: [
       {
-        url: "/og-cyberpunk-glitch.png",
-        alt: "Ciberpunk Ecuador glitch cyberpunk vaporwave logo",
+        url: "/1.png",
+        alt: "CiberPunk Ecuador logo",
       },
     ],
     site: "@freudiandev",
   },
   other: {
-    'og:image': '/og-cyberpunk-glitch.png',
+    'og:image': '/1.png',
     'og:type': 'website',
     'og:site_name': 'Ciberpunk Ecuador',
     'og:locale': 'es_EC',
-    'whatsapp:image': '/og-cyberpunk-glitch.png',
-    'telegram:image': '/og-cyberpunk-glitch.png',
-    'instagram:image': '/og-cyberpunk-glitch.png',
+    'whatsapp:image': '/1.png',
+    'telegram:image': '/1.png',
+    'instagram:image': '/1.png',
     'robots': 'index, follow',
     'geo.region': 'EC-P',
     'geo.placename': 'Quito',
@@ -102,6 +102,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark bg-black`}
     >
       <head>
+        <link rel="icon" type="image/png" href="/1.png" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Ciberpunk Ecuador: desarrollo de páginas web, clases de programación y creación de juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA (Claude, GPT, Gemini). Accesible, profesional, cyberpunk vaporwave." />
@@ -127,7 +128,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-black text-zinc-100 font-sans">
         <Header />
-        <main className="flex-1 flex flex-col w-full mx-auto max-w-5xl px-2 md:px-8">
+        <main className="flex-1 flex flex-col w-full mx-auto max-w-5xl px-2 md:px-8 py-8 bg-black text-zinc-100">
           {children}
           <NeonCTA />
         </main>

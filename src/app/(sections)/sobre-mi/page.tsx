@@ -1,6 +1,6 @@
 export default function SobreMiPage() {
   return (
-    <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 py-16">
+    <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 py-16 my-8 bg-black text-zinc-100 rounded-2xl shadow-xl border border-violet-400/30">
       <h1 className="text-4xl md:text-5xl font-bold neon-gradient mb-4">Sobre mí</h1>
       <div className="max-w-2xl text-lg md:text-xl mb-6 text-zinc-300 space-y-4">
         <p>Soy Freudian Dev. La mayor parte de mi vida la pasé lidiando con problemas mentales y existenciales: cuestionando la filosofía, la política, la realidad y los límites. Siempre fui innovador y creativo. Hoy quiero traer soluciones tecnológicas altas al pueblo, a presupuestos de bolsillo. Democratizar el conocimiento.</p>
