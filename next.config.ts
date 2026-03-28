@@ -8,8 +8,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '',
+  basePath: '/docs',
   trailingSlash: true,
+  distDir: 'docs',
 };
 
 module.exports = nextConfig;
