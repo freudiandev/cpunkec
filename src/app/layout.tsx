@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/1.png",
+        url: "/src/assets/1.jpg",
         width: 1200,
         height: 630,
         alt: "CiberPunk Ecuador logo",
@@ -69,20 +69,20 @@ export const metadata: Metadata = {
       "Desarrollo de páginas web, clases de programación y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA avanzada (Claude, GPT, Gemini).",
     images: [
       {
-        url: "/1.png",
+        url: "/src/assets/1.jpg",
         alt: "CiberPunk Ecuador logo",
       },
     ],
     site: "@freudiandev",
   },
   other: {
-    'og:image': '/1.png',
+    'og:image': '/src/assets/1.jpg',
     'og:type': 'website',
     'og:site_name': 'Ciberpunk Ecuador',
     'og:locale': 'es_EC',
-    'whatsapp:image': '/1.png',
-    'telegram:image': '/1.png',
-    'instagram:image': '/1.png',
+    'whatsapp:image': '/src/assets/1.jpg',
+    'telegram:image': '/src/assets/1.jpg',
+    'instagram:image': '/src/assets/1.jpg',
     'robots': 'index, follow',
     'geo.region': 'EC-P',
     'geo.placename': 'Quito',
@@ -102,7 +102,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark bg-black`}
     >
       <head>
-        <link rel="icon" type="image/png" href="/1.png" />
+        <link rel="icon" type="image/png" href="/src/assets/1.jpg" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Ciberpunk Ecuador: desarrollo de páginas web, clases de programación y creación de juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA (Claude, GPT, Gemini). Accesible, profesional, cyberpunk vaporwave." />
@@ -110,17 +110,17 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Ciberpunk Ecuador | Páginas web, clases y materiales en Quito y Latinoamérica" />
         <meta property="og:description" content="Desarrollo de páginas web, clases de programación y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA avanzada (Claude, GPT, Gemini)." />
-        <meta property="og:image" content="/og-cyberpunk-glitch.png" />
+        <meta property="og:image" content="/src/assets/1.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Ciberpunk Ecuador" />
         <meta property="og:locale" content="es_EC" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="Ciberpunk Ecuador | Páginas web, clases y materiales en Quito y Latinoamérica" />
         <meta property="twitter:description" content="Desarrollo de páginas web, clases de programación y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA avanzada (Claude, GPT, Gemini)." />
-        <meta property="twitter:image" content="/og-cyberpunk-glitch.png" />
-        <meta property="whatsapp:image" content="/og-cyberpunk-glitch.png" />
-        <meta property="telegram:image" content="/og-cyberpunk-glitch.png" />
-        <meta property="instagram:image" content="/og-cyberpunk-glitch.png" />
+        <meta property="twitter:image" content="/src/assets/1.jpg" />
+        <meta property="whatsapp:image" content="/src/assets/1.jpg" />
+        <meta property="telegram:image" content="/src/assets/1.jpg" />
+        <meta property="instagram:image" content="/src/assets/1.jpg" />
         <meta name="geo.region" content="EC-P" />
         <meta name="geo.placename" content="Quito" />
         <meta name="geo.position" content="-0.1807;-78.4678" />

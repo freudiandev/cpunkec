@@ -1,9 +1,12 @@
+// Logo splash antes de todo el contenido
+<img src="/src/assets/1.jpg" alt="Logo CiberPunk Ecuador" style={{ display: 'block', margin: '32px auto 0', width: '96px', height: '96px', borderRadius: '50%', border: '3px solid #d946ef', background: 'white', boxShadow: '0 0 24px #d946ef88' }} />
+
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-screen px-0 py-0 text-center">
       {/* Hero principal */}
       <section className="w-full bg-black text-zinc-100 flex flex-col items-center justify-center py-16 px-4 md:px-0">
-        <img src="/1.png" alt="Logo CiberPunk Ecuador" className="w-24 h-24 mb-6 rounded-full shadow-lg border-4 border-fuchsia-400 bg-white object-cover" />
+        <img src="/src/assets/1.jpg" alt="Logo CiberPunk Ecuador" className="w-24 h-24 mb-6 rounded-full shadow-lg border-4 border-fuchsia-400 bg-white object-cover" />
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">CiberPunk Ecuador</h1>
         <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
           Soluciones digitales, clases y materiales de desarrollo web para empresas y profesionales.<br />
@@ -24,17 +27,17 @@ export default function Home() {
       <section className="w-full bg-white text-zinc-900 py-16 px-4 md:px-0">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
           <div className="flex flex-col items-center">
-            <img src="/1.png" alt="Clases" className="w-16 h-16 mb-4 rounded-full border-2 border-fuchsia-400 object-cover" />
+            <img src="/src/assets/1.jpg" alt="Clases" className="w-16 h-16 mb-4 rounded-full border-2 border-fuchsia-400 object-cover" />
             <h2 className="text-lg font-bold mb-2">Clases personalizadas</h2>
             <p>Aprende desde cero o potencia tus habilidades. Para todas las edades y niveles.</p>
           </div>
           <div className="flex flex-col items-center">
-            <img src="/1.png" alt="Materiales" className="w-16 h-16 mb-4 rounded-full border-2 border-turquoise-400 object-cover" />
+            <img src="/src/assets/1.jpg" alt="Materiales" className="w-16 h-16 mb-4 rounded-full border-2 border-turquoise-400 object-cover" />
             <h2 className="text-lg font-bold mb-2">Materiales interactivos</h2>
             <p>Quizzes, minijuegos y recursos educativos únicos, hechos a medida.</p>
           </div>
           <div className="flex flex-col items-center">
-            <img src="/1.png" alt="Servicios web" className="w-16 h-16 mb-4 rounded-full border-2 border-violet-400 object-cover" />
+            <img src="/src/assets/1.jpg" alt="Servicios web" className="w-16 h-16 mb-4 rounded-full border-2 border-violet-400 object-cover" />
             <h2 className="text-lg font-bold mb-2">Servicios web</h2>
             <p>Sitios web modernos, accesibles y con identidad propia. Precios justos y solidarios.</p>
           </div>
