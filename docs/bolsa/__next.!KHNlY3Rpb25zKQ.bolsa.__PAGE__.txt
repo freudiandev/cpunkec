@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[28888,["/docs/_next/static/chunks/05drfgcdn5jfs.js","/docs/_next/static/chunks/0kkxxcpec_-s-.js"],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","section",null,{"className":"min-h-[60vh] flex flex-col items-center justify-center text-center px-4 py-16 my-8 bg-black text-zinc-100 rounded-2xl shadow-xl border border-turquoise-400/30","children":[["$","h1",null,{"className":"text-4xl md:text-5xl font-bold neon-gradient mb-4","children":"Bolsa de Empleo Barrio Tarqui 1"}],["$","p",null,{"className":"text-xl text-zinc-400 animate-glitch","children":"Coming Soon"}],["$","a",null,{"href":"https://wa.me/593983629837","target":"_blank","rel":"noopener","className":"btn-neon-glitch text-lg px-8 py-3 mt-8","children":"¿Quieres auspiciar o donar?"}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"QscgqoJAuE7o6m3nSOdDU"}
-4:null
