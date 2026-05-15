@@ -96,7 +96,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-black text-zinc-100 font-sans">
         <Header />
-        <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-2 py-8 md:px-8">
+        <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-3 py-8 md:px-8">
           {children}
           <NeonCTA />
         </main>

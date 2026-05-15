@@ -30,25 +30,25 @@ export default function Footer() {
     }
   }, []);
   return (
-    <footer className="w-full mt-auto py-6 px-4 bg-black/90 border-t border-fuchsia-700/30 text-center text-zinc-400 text-sm flex flex-col items-center gap-2">
+    <footer className="mt-auto flex w-full flex-col items-center gap-2 border-t border-cyan-300/15 bg-black/80 px-4 py-6 text-center text-sm text-zinc-400 shadow-[0_-20px_45px_rgba(0,229,255,0.04)] backdrop-blur">
       <Image
         src={siteConfig.logoPath}
         alt="Logo CiberPunk Ecuador"
         width={48}
         height={48}
-        className="w-12 h-12 mb-2 rounded-full border-2 border-fuchsia-400 bg-white object-cover"
+        className="glitch-logo mb-2 h-12 w-12 rounded-full border border-fuchsia-300 bg-white object-cover shadow-[0_0_18px_rgba(255,61,242,0.35)]"
       />
       <div className="flex items-center gap-2 text-pixel font-mono">
         <span className="pixel-art">▉</span>
-        <span id="visit-counter" className="text-turquoise-400">Visitas: <span className="font-bold">{visits}</span></span>
+        <span id="visit-counter" className="text-cyan-300">Visitas: <span className="font-bold">{visits}</span></span>
         <span className="pixel-art">▉</span>
       </div>
       <div className="text-xs mt-2">
         Cumplimos con la Ley Orgánica de Protección de Datos Personales (LOPDP) del Ecuador.
       </div>
       <div className="flex gap-4 justify-center mt-2">
-        <a href="https://facebook.com/freudiandev" target="_blank" rel="noopener" className="hover:text-fuchsia-400 underline">Facebook</a>
-        <a href="https://instagram.com/freudiandev" target="_blank" rel="noopener" className="hover:text-turquoise-400 underline">Instagram</a>
+        <a href="https://facebook.com/freudiandev" target="_blank" rel="noopener" className="underline hover:text-fuchsia-300">Facebook</a>
+        <a href="https://instagram.com/freudiandev" target="_blank" rel="noopener" className="underline hover:text-cyan-300">Instagram</a>
       </div>
       <div className="mt-2">
         Esta página es Copyleft – Licencia GNU GPL 3.0. Hecho con amor <span className="text-fuchsia-400">♥</span> por Freudian Dev de Ciberpunk Ecuador.

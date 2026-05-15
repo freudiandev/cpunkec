@@ -14,28 +14,39 @@ const navLinks = [
 
 export default function Header() {
   return (
-    <header className="w-full py-4 px-2 md:px-8 flex items-center justify-between bg-black/80 backdrop-blur border-b border-fuchsia-700/30 relative z-50">
-      <Link href="/" className="flex items-center gap-3 select-none" aria-label="Inicio Ciberpunk Ecuador">
-        <Image
-          src={siteConfig.logoPath}
-          alt="Logo CiberPunk Ecuador"
-          width={40}
-          height={40}
-          className="w-10 h-10 rounded-full border-2 border-fuchsia-400 bg-white object-cover"
-        />
-        <span className="text-2xl font-extrabold tracking-widest text-zinc-100">CiberPunk Ecuador</span>
-      </Link>
-      <nav aria-label="Navegación principal" className="flex gap-2 md:gap-4">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="nav-link px-3 py-1 rounded-md text-base font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+    <header className="sticky top-0 z-50 w-full border-b border-cyan-300/15 bg-black/72 px-3 py-3 shadow-[0_0_30px_rgba(0,229,255,0.08)] backdrop-blur-xl md:px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3">
+        <Link
+          href="/"
+          className="group flex items-center gap-3 select-none"
+          aria-label="Inicio Ciberpunk Ecuador"
+        >
+          <Image
+            src={siteConfig.logoPath}
+            alt="Logo CiberPunk Ecuador"
+            width={40}
+            height={40}
+            className="glitch-logo h-10 w-10 rounded-full border border-fuchsia-300 bg-white object-cover shadow-[0_0_18px_rgba(255,61,242,0.45)]"
+          />
+          <span className="text-lg font-extrabold uppercase tracking-[0.18em] text-zinc-100 drop-shadow-[0_0_10px_rgba(0,229,255,0.35)] md:text-2xl">
+            CiberPunk Ecuador
+          </span>
+        </Link>
+        <nav
+          aria-label="Navegación principal"
+          className="flex flex-wrap justify-end gap-1 md:gap-2"
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="nav-link rounded-md border border-transparent px-2.5 py-1 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 md:text-base"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }

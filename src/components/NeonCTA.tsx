@@ -4,10 +4,10 @@ export default function NeonCTA() {
       href="https://wa.me/593983629837"
       target="_blank"
       rel="noopener"
-      className="btn-neon-glitch text-xl px-10 py-4 mt-8"
+      className="btn-neon-glitch mx-auto mt-8 px-8 py-3 text-base"
       aria-label="Contactar por WhatsApp"
     >
-      ¡Contáctanos por WhatsApp!
+      Contactanos por WhatsApp
     </a>
   );
 }
