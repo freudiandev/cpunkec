@@ -1,76 +1,123 @@
-// Logo splash antes de todo el contenido
-<img src="/src/assets/1.jpg" alt="Logo CiberPunk Ecuador" style={{ display: 'block', margin: '32px auto 0', width: '96px', height: '96px', borderRadius: '50%', border: '3px solid #d946ef', background: 'white', boxShadow: '0 0 24px #d946ef88' }} />
+import Image from "next/image";
+import { siteConfig } from "@/lib/site";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center w-full min-h-screen px-0 py-0 text-center">
-      {/* Hero principal */}
-      <section className="w-full bg-black text-zinc-100 flex flex-col items-center justify-center py-16 px-4 md:px-0">
-        <img src="/src/assets/1.jpg" alt="Logo CiberPunk Ecuador" className="w-24 h-24 mb-6 rounded-full shadow-lg border-4 border-fuchsia-400 bg-white object-cover" />
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">CiberPunk Ecuador</h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-          Soluciones digitales, clases y materiales de desarrollo web para empresas y profesionales.<br />
-          <span className="text-fuchsia-500 font-semibold">Innovación, confianza y resultados.</span>
+    <main className="flex min-h-screen w-full flex-col items-center justify-center px-0 py-0 text-center">
+      <section className="flex w-full flex-col items-center justify-center bg-black px-4 py-16 text-zinc-100 md:px-0">
+        <Image
+          src={siteConfig.logoPath}
+          alt="Logo CiberPunk Ecuador"
+          width={96}
+          height={96}
+          className="mb-6 h-24 w-24 rounded-full border-4 border-fuchsia-400 bg-white object-cover shadow-lg"
+        />
+        <h1 className="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl">
+          CiberPunk Ecuador
+        </h1>
+        <p className="mx-auto mb-8 max-w-2xl text-xl md:text-2xl">
+          Soluciones digitales, clases y materiales de desarrollo web para
+          empresas y profesionales.
+          <br />
+          <span className="font-semibold text-fuchsia-500">
+            Innovacion, confianza y resultados.
+          </span>
         </p>
         <a
           href="https://wa.me/593983629837"
           target="_blank"
-          rel="noopener"
-          className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow transition"
+          rel="noopener noreferrer"
+          className="rounded-full bg-fuchsia-600 px-10 py-4 text-xl font-bold text-white shadow transition hover:bg-fuchsia-700"
           aria-label="Contactar por WhatsApp"
         >
-          ¡Solicita tu web o clase ahora!
+          Solicita tu web o clase ahora
         </a>
       </section>
 
-      {/* Beneficios */}
-      <section className="w-full bg-white text-zinc-900 py-16 px-4 md:px-0">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <section className="w-full bg-white px-4 py-16 text-zinc-900 md:px-0">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center">
-            <img src="/src/assets/1.jpg" alt="Clases" className="w-16 h-16 mb-4 rounded-full border-2 border-fuchsia-400 object-cover" />
-            <h2 className="text-lg font-bold mb-2">Clases personalizadas</h2>
-            <p>Aprende desde cero o potencia tus habilidades. Para todas las edades y niveles.</p>
+            <Image
+              src={siteConfig.logoPath}
+              alt="Clases"
+              width={64}
+              height={64}
+              className="mb-4 h-16 w-16 rounded-full border-2 border-fuchsia-400 object-cover"
+            />
+            <h2 className="mb-2 text-lg font-bold">Clases personalizadas</h2>
+            <p>
+              Aprende desde cero o potencia tus habilidades. Para todas las
+              edades y niveles.
+            </p>
           </div>
           <div className="flex flex-col items-center">
-            <img src="/src/assets/1.jpg" alt="Materiales" className="w-16 h-16 mb-4 rounded-full border-2 border-turquoise-400 object-cover" />
-            <h2 className="text-lg font-bold mb-2">Materiales interactivos</h2>
-            <p>Quizzes, minijuegos y recursos educativos únicos, hechos a medida.</p>
+            <Image
+              src={siteConfig.logoPath}
+              alt="Materiales"
+              width={64}
+              height={64}
+              className="mb-4 h-16 w-16 rounded-full border-2 border-cyan-400 object-cover"
+            />
+            <h2 className="mb-2 text-lg font-bold">Materiales interactivos</h2>
+            <p>
+              Quizzes, minijuegos y recursos educativos unicos, hechos a
+              medida.
+            </p>
           </div>
           <div className="flex flex-col items-center">
-            <img src="/src/assets/1.jpg" alt="Servicios web" className="w-16 h-16 mb-4 rounded-full border-2 border-violet-400 object-cover" />
-            <h2 className="text-lg font-bold mb-2">Servicios web</h2>
-            <p>Sitios web modernos, accesibles y con identidad propia. Precios justos y solidarios.</p>
+            <Image
+              src={siteConfig.logoPath}
+              alt="Servicios web"
+              width={64}
+              height={64}
+              className="mb-4 h-16 w-16 rounded-full border-2 border-violet-400 object-cover"
+            />
+            <h2 className="mb-2 text-lg font-bold">Servicios web</h2>
+            <p>
+              Sitios web modernos, accesibles y con identidad propia. Precios
+              justos y solidarios.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Testimonios */}
-      <section className="w-full bg-black text-zinc-100 py-16 px-4 md:px-0">
-        <h3 className="text-2xl font-bold mb-8">Testimonios</h3>
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 justify-center">
-          <blockquote className="bg-zinc-900 border-l-4 border-fuchsia-400 p-6 rounded-lg text-zinc-100 italic shadow">
-            “Aprendí a programar desde cero y ahora hago mis propios proyectos. ¡Gracias CiberPunk!”<br />
-            <span className="block mt-2 text-turquoise-400 font-mono">— Estudiante, Quito</span>
+      <section className="w-full bg-black px-4 py-16 text-zinc-100 md:px-0">
+        <h3 className="mb-8 text-2xl font-bold">Testimonios</h3>
+        <div className="mx-auto flex max-w-4xl flex-col justify-center gap-8 md:flex-row">
+          <blockquote className="rounded-lg border-l-4 border-fuchsia-400 bg-zinc-900 p-6 italic text-zinc-100 shadow">
+            “Aprendi a programar desde cero y ahora hago mis propios proyectos.
+            Gracias CiberPunk.”
+            <br />
+            <span className="mt-2 block font-mono text-cyan-400">
+              Estudiante, Quito
+            </span>
           </blockquote>
-          <blockquote className="bg-zinc-900 border-l-4 border-turquoise-400 p-6 rounded-lg text-zinc-100 italic shadow">
-            “El sitio web de mi emprendimiento es único y rápido. Atención personalizada y solidaria.”<br />
-            <span className="block mt-2 text-fuchsia-400 font-mono">— Emprendedora, Tarqui</span>
+          <blockquote className="rounded-lg border-l-4 border-cyan-400 bg-zinc-900 p-6 italic text-zinc-100 shadow">
+            “El sitio web de mi emprendimiento es unico y rapido. Atencion
+            personalizada y solidaria.”
+            <br />
+            <span className="mt-2 block font-mono text-fuchsia-400">
+              Emprendedora, Tarqui
+            </span>
           </blockquote>
         </div>
       </section>
 
-      {/* CTA final */}
-      <section className="w-full bg-white text-zinc-900 py-16 px-4 md:px-0">
-        <h4 className="text-xl font-bold mb-4">¿Listo para transformar tu futuro digital?</h4>
+      <section className="w-full bg-white px-4 py-16 text-zinc-900 md:px-0">
+        <h4 className="mb-4 text-xl font-bold">
+          Listo para transformar tu futuro digital
+        </h4>
         <a
           href="https://wa.me/593983629837"
           target="_blank"
-          rel="noopener"
-          className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow transition"
+          rel="noopener noreferrer"
+          className="rounded-full bg-fuchsia-600 px-10 py-4 text-xl font-bold text-white shadow transition hover:bg-fuchsia-700"
         >
-          ¡Contáctanos por WhatsApp!
+          Contactanos por WhatsApp
         </a>
-        <p className="mt-4 text-zinc-500 text-sm">By Freudian Dev — CiberPunk Ecuador</p>
+        <p className="mt-4 text-sm text-zinc-500">
+          By Freudian Dev - CiberPunk Ecuador
+        </p>
       </section>
     </main>
   );

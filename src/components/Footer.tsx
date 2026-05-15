@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
   const [visits, setVisits] = useState<number>(0);
@@ -29,7 +31,13 @@ export default function Footer() {
   }, []);
   return (
     <footer className="w-full mt-auto py-6 px-4 bg-black/90 border-t border-fuchsia-700/30 text-center text-zinc-400 text-sm flex flex-col items-center gap-2">
-      <img src="/1.jpg" alt="Logo CiberPunk Ecuador" className="w-12 h-12 mb-2 rounded-full border-2 border-fuchsia-400 bg-white object-cover" />
+      <Image
+        src={siteConfig.logoPath}
+        alt="Logo CiberPunk Ecuador"
+        width={48}
+        height={48}
+        className="w-12 h-12 mb-2 rounded-full border-2 border-fuchsia-400 bg-white object-cover"
+      />
       <div className="flex items-center gap-2 text-pixel font-mono">
         <span className="pixel-art">▉</span>
         <span id="visit-counter" className="text-turquoise-400">Visitas: <span className="font-bold">{visits}</span></span>

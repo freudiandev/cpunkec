@@ -1,16 +1,14 @@
 import type { NextConfig } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
-  // experimental: {
-  //   appDir: true,
-  // },
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
   },
-  basePath: '/docs',
+  basePath,
   trailingSlash: true,
-  distDir: 'docs',
 };
 
-module.exports = nextConfig;
+export default nextConfig;
