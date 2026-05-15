@@ -102,25 +102,29 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark bg-black`}
     >
       <head>
-        <link rel="icon" type="image/png" href="/src/assets/1.jpg" />
+        <link rel="icon" type="image/png" href="/1.jpg" />
         <meta charSet="utf-8" />
+        {/* Evitar cacheo agresivo de recursos estáticos */}
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Ciberpunk Ecuador: desarrollo de páginas web, clases de programación y creación de juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA (Claude, GPT, Gemini). Accesible, profesional, cyberpunk vaporwave." />
         <meta name="keywords" content="páginas web Quito, páginas web Ecuador, páginas web Latinoamérica, clases de desarrollo web, clases de programación, juegos web desde cero, materiales educativos interactivos, trabajos investigativos académicos, Anthropic Claude Sonnet 4.5, Claude Opus 4.5, Claude Sonnet 4.6, Claude Opus 4.6, GPT 5.2, GPT 5.5, Gemini 3.1 PRO, servicios web Quito, desarrollo web Ecuador, web accesible, web profesional, cyberpunk vaporwave, freudiandev, ciberpunk ecuador" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Ciberpunk Ecuador | Páginas web, clases y materiales en Quito y Latinoamérica" />
         <meta property="og:description" content="Desarrollo de páginas web, clases de programación y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA avanzada (Claude, GPT, Gemini)." />
-        <meta property="og:image" content="/src/assets/1.jpg" />
+        <meta property="og:image" content="/1.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Ciberpunk Ecuador" />
         <meta property="og:locale" content="es_EC" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="Ciberpunk Ecuador | Páginas web, clases y materiales en Quito y Latinoamérica" />
         <meta property="twitter:description" content="Desarrollo de páginas web, clases de programación y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamérica. Materiales educativos, trabajos investigativos con IA avanzada (Claude, GPT, Gemini)." />
-        <meta property="twitter:image" content="/src/assets/1.jpg" />
-        <meta property="whatsapp:image" content="/src/assets/1.jpg" />
-        <meta property="telegram:image" content="/src/assets/1.jpg" />
-        <meta property="instagram:image" content="/src/assets/1.jpg" />
+        <meta property="twitter:image" content="/1.jpg" />
+        <meta property="whatsapp:image" content="/1.jpg" />
+        <meta property="telegram:image" content="/1.jpg" />
+        <meta property="instagram:image" content="/1.jpg" />
         <meta name="geo.region" content="EC-P" />
         <meta name="geo.placename" content="Quito" />
         <meta name="geo.position" content="-0.1807;-78.4678" />

@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="w-full py-4 px-2 md:px-8 flex items-center justify-between bg-black/80 backdrop-blur border-b border-fuchsia-700/30 relative z-50">
       <Link href="/" className="flex items-center gap-3 select-none" aria-label="Inicio Ciberpunk Ecuador">
-        <img src="/src/assets/1.jpg" alt="Logo CiberPunk Ecuador" className="w-10 h-10 rounded-full border-2 border-fuchsia-400 bg-white object-cover" />
+        <img src="/1.jpg" alt="Logo CiberPunk Ecuador" className="w-10 h-10 rounded-full border-2 border-fuchsia-400 bg-white object-cover" />
         <span className="text-2xl font-extrabold tracking-widest text-zinc-100">CiberPunk Ecuador</span>
       </Link>
       <nav aria-label="Navegación principal" className="flex gap-2 md:gap-4">
