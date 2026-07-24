@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import NeonCTA from "@/components/NeonCTA";
 import { siteConfig } from "@/lib/site";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,40 +18,27 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
-  icons: {
-    icon: siteConfig.logoPath,
-  },
   title: {
-    default: "Ciberpunk Ecuador",
-    template: "%s | Ciberpunk Ecuador",
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Ciberpunk Ecuador: desarrollo de paginas web, clases de programacion y creacion de juegos web desde cero. Servicios en Quito, Ecuador y Latinoamerica.",
+  description: siteConfig.description,
   keywords: [
-    "paginas web Quito",
-    "paginas web Ecuador",
-    "paginas web Latinoamerica",
-    "clases de desarrollo web",
-    "clases de programacion",
-    "juegos web desde cero",
-    "materiales educativos interactivos",
-    "trabajos investigativos academicos",
-    "desarrollo web",
-    "web accesible",
-    "web profesional",
-    "cyberpunk vaporwave",
-    "ciberpunk ecuador",
-    "freudiandev",
+    "desarrollo web Quito",
+    "clases de programación Ecuador",
+    "materiales interactivos",
+    "portafolio web Ecuador",
+    "Ciberpunk Ecuador",
+    "Freudian Dev",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Ciberpunk Ecuador | Paginas web, clases y materiales en Quito y Latinoamerica",
-    description:
-      "Desarrollo de paginas web, clases de programacion y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamerica.",
+    title: `${siteConfig.name} | Web, clases y materiales`,
+    description: siteConfig.description,
     url: "/",
-    siteName: "Ciberpunk Ecuador",
+    siteName: siteConfig.name,
     locale: "es_EC",
     type: "website",
     images: [
@@ -63,24 +50,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ciberpunk Ecuador | Paginas web, clases y materiales en Quito y Latinoamerica",
-    description:
-      "Desarrollo de paginas web, clases de programacion y juegos web desde cero. Servicios en Quito, Ecuador y Latinoamerica.",
+    title: `${siteConfig.name} | Web, clases y materiales`,
+    description: siteConfig.description,
     images: [siteConfig.logoPath],
     site: "@freudiandev",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  other: {
-    "whatsapp:image": siteConfig.logoPath,
-    "telegram:image": siteConfig.logoPath,
-    "instagram:image": siteConfig.logoPath,
-    "geo.region": "EC-P",
-    "geo.placename": "Quito",
-    "geo.position": "-0.1807;-78.4678",
-    ICBM: "-0.1807, -78.4678",
   },
 };
 
@@ -92,15 +65,29 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      data-scroll-behavior="smooth"
     >
-      <body className="min-h-full flex flex-col bg-black text-zinc-100 font-sans">
-        <Header />
-        <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-3 py-8 md:px-8">
-          {children}
-          <NeonCTA />
-        </main>
-        <Footer />
+      <body className="min-h-screen bg-slate-950 text-zinc-100">
+        <a href="#contenido" className="skip-link">
+          Saltar al contenido
+        </a>
+        <div className="site-shell">
+          <div className="ambient-layer" aria-hidden="true">
+            <span className="ambient-orb ambient-orb--cyan" />
+            <span className="ambient-orb ambient-orb--pink" />
+            <span className="ambient-scanline" />
+          </div>
+          <Header />
+          <main
+            id="contenido"
+            className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-1 flex-col px-4 py-8 md:px-8 md:py-10"
+          >
+            {children}
+            <NeonCTA />
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

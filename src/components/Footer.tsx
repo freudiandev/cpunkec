@@ -1,57 +1,85 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
-  const [visits, setVisits] = useState<number>(0);
+  const [visits, setVisits] = useState(0);
 
-  // Incrementar solo una vez al cargar
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const v = localStorage.getItem("ciberpunk-ecuador-visits");
-      let count = v ? parseInt(v, 10) : 0;
-      if (!sessionStorage.getItem("ciberpunk-ecuador-visited")) {
-        count++;
-        localStorage.setItem("ciberpunk-ecuador-visits", count.toString());
-        sessionStorage.setItem("ciberpunk-ecuador-visited", "1");
-      }
+    const storageKey = "ciberpunk-ecuador-visits";
+    const sessionKey = "ciberpunk-ecuador-visited";
+
+    const rawValue = window.localStorage.getItem(storageKey);
+    let nextValue = rawValue ? Number.parseInt(rawValue, 10) : 0;
+
+    if (!window.sessionStorage.getItem(sessionKey)) {
+      nextValue += 1;
+      window.localStorage.setItem(storageKey, String(nextValue));
+      window.sessionStorage.setItem(sessionKey, "1");
     }
+
+    const timeoutId = window.setTimeout(() => {
+      setVisits(nextValue);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
-  // Leer el valor para mostrarlo
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setTimeout(() => {
-        const v = localStorage.getItem("ciberpunk-ecuador-visits");
-        setVisits(v ? parseInt(v, 10) : 0);
-      }, 0);
-    }
-  }, []);
   return (
-    <footer className="mt-auto flex w-full flex-col items-center gap-2 border-t border-cyan-300/15 bg-black/80 px-4 py-6 text-center text-sm text-zinc-400 shadow-[0_-20px_45px_rgba(0,229,255,0.04)] backdrop-blur">
-      <Image
-        src={siteConfig.logoPath}
-        alt="Logo CiberPunk Ecuador"
-        width={48}
-        height={48}
-        className="glitch-logo mb-2 h-12 w-12 rounded-full border border-fuchsia-300 bg-white object-cover shadow-[0_0_18px_rgba(255,61,242,0.35)]"
-      />
-      <div className="flex items-center gap-2 text-pixel font-mono">
-        <span className="pixel-art">▉</span>
-        <span id="visit-counter" className="text-cyan-300">Visitas: <span className="font-bold">{visits}</span></span>
-        <span className="pixel-art">▉</span>
-      </div>
-      <div className="text-xs mt-2">
-        Cumplimos con la Ley Orgánica de Protección de Datos Personales (LOPDP) del Ecuador.
-      </div>
-      <div className="flex gap-4 justify-center mt-2">
-        <a href="https://facebook.com/freudiandev" target="_blank" rel="noopener" className="underline hover:text-fuchsia-300">Facebook</a>
-        <a href="https://instagram.com/freudiandev" target="_blank" rel="noopener" className="underline hover:text-cyan-300">Instagram</a>
-      </div>
-      <div className="mt-2">
-        Esta página es Copyleft – Licencia GNU GPL 3.0. Hecho con amor <span className="text-fuchsia-400">♥</span> por Freudian Dev de Ciberpunk Ecuador.
+    <footer className="border-t border-fuchsia-400/20 bg-slate-950/95">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-10 md:px-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4">
+              <Image
+                src={siteConfig.logoPath}
+                alt="Logo de Ciberpunk Ecuador"
+                width={52}
+                height={52}
+                className="rounded-full border border-fuchsia-400/70 bg-white/95 object-cover shadow-[0_0_30px_rgba(232,121,249,0.25)]"
+              />
+              <div>
+                <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300/80">
+                  Ciberpunk Ecuador
+                </p>
+                <p className="text-sm text-zinc-300">
+                  Tecnología con identidad propia, enfoque accesible y
+                  acompañamiento cercano.
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm leading-7 text-zinc-400">
+              Ciberpunk Ecuador trabaja con enfoque accesible, acompañamiento
+              cercano y cumplimiento de la Ley Orgánica de Protección de Datos
+              Personales del Ecuador.
+            </p>
+          </div>
+
+          <div className="grid gap-2 text-sm text-zinc-300">
+            <p>WhatsApp: {siteConfig.phone}</p>
+            <p>Email: {siteConfig.email}</p>
+            <p>Ubicación: {siteConfig.location}</p>
+            <p>Visitas locales: {visits}</p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-3 text-sm">
+          <a href={siteConfig.facebookUrl} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 px-4 py-2 text-zinc-200 transition hover:border-fuchsia-400/50 hover:bg-fuchsia-400/10">
+            Facebook
+          </a>
+          <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 px-4 py-2 text-zinc-200 transition hover:border-cyan-300/50 hover:bg-cyan-300/10">
+            Instagram
+          </a>
+          <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 px-4 py-2 text-zinc-200 transition hover:border-emerald-300/50 hover:bg-emerald-300/10">
+            WhatsApp
+          </a>
+        </div>
+
+        <p className="text-xs text-zinc-500">
+          Copyleft - GNU GPL 3.0. Hecho por Freudian Dev para Ciberpunk Ecuador.
+        </p>
       </div>
     </footer>
   );

@@ -1,27 +1,21 @@
-version: '3.8'
 services:
   nextjs:
-    build: .
+    build:
+      context: .
+      target: runner
+    image: ciberpunk-ecuador:local
+    container_name: cpunkec-web
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-      - /app/node_modules
+      - "${PORT:-3000}:3000"
     environment:
-      - NODE_ENV=development
-
-  mariadb:
-    image: mariadb:11.3
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example_root_password
-      MYSQL_DATABASE: example_db
-      MYSQL_USER: example_user
-      MYSQL_PASSWORD: example_password
-    ports:
-      - "3306:3306"
-    volumes:
-      - mariadb_data:/var/lib/mysql
-
-volumes:
-  mariadb_data:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      HOSTNAME: "0.0.0.0"
+      PORT: "3000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:3000/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s

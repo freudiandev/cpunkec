@@ -1,160 +1,315 @@
 import Image from "next/image";
+import Link from "next/link";
+import avatarArt from "@/assets/1.jpg";
+import HomeMotion from "@/components/HomeMotion";
+import SpotlightCard from "@/components/SpotlightCard";
 import { siteConfig } from "@/lib/site";
 
 const services = [
   {
-    eyebrow: "01 / FORMACION",
-    title: "Clases personalizadas",
-    text: "Acompanamiento claro para aprender desarrollo web desde cero o fortalecer proyectos reales.",
-    accent: "text-fuchsia-200",
-    border: "border-fuchsia-300/30",
-  },
-  {
-    eyebrow: "02 / PRODUCTO",
+    code: "01",
+    glyph: "</>",
     title: "Servicios web",
-    text: "Sitios rapidos, accesibles y con identidad visual propia para emprendimientos y profesionales.",
-    accent: "text-cyan-200",
-    border: "border-cyan-300/30",
+    body: "Sitios con dirección visual, estructura clara y tecnología que trabaja para tu negocio.",
+    href: "/servicios",
+    color: "rgba(244, 114, 182, 0.18)",
   },
   {
-    eyebrow: "03 / EDUCACION",
+    code: "02",
+    glyph: "EDU",
+    title: "Clases personalizadas",
+    body: "Programación explicada en humano: a tu ritmo, con práctica real y sin elitismo técnico.",
+    href: "/clases",
+    color: "rgba(34, 211, 238, 0.18)",
+  },
+  {
+    code: "03",
+    glyph: "LAB",
     title: "Materiales interactivos",
-    text: "Quizzes, minijuegos y recursos digitales hechos a medida para explicar mejor y vender con confianza.",
-    accent: "text-lime-200",
-    border: "border-lime-300/30",
+    body: "Quizzes, simuladores y experiencias digitales que convierten contenido en aprendizaje.",
+    href: "/materiales",
+    color: "rgba(250, 204, 21, 0.14)",
   },
 ];
 
-const metrics = [
-  { value: "Quito", label: "base local" },
-  { value: "Web", label: "producto medible" },
-  { value: "IA", label: "flujo moderno" },
+const capabilities = [
+  {
+    code: "WEB_SYS",
+    title: "Diseño + desarrollo",
+    body: "Landings, webs institucionales y sitios comerciales rápidos, accesibles y con una identidad imposible de confundir.",
+  },
+  {
+    code: "LEARN_01",
+    title: "Educación sin barreras",
+    body: "Acompañamiento real para empezar desde cero, reforzar bases o llevar una idea propia hasta código funcional.",
+  },
+  {
+    code: "INTERACT",
+    title: "Experiencias que enseñan",
+    body: "Recursos interactivos pensados para despertar curiosidad y hacer que aprender deje de sentirse como una obligación.",
+  },
+  {
+    code: "LOW_COST",
+    title: "Tecnología alcanzable",
+    body: "Presupuestos honestos, procesos transparentes y soluciones que respetan el contexto de cada persona o proyecto.",
+  },
+];
+
+const tickerItems = [
+  "HIGH TECH",
+  "LOW LIFE",
+  "QUITO // ECUADOR",
+  "WEB + EDUCACIÓN",
+  "TECNOLOGÍA PARA LA GENTE",
 ];
 
 export default function Home() {
   return (
-    <div className="flex w-full flex-col gap-10 text-zinc-100">
-      <section className="neon-shell kinetic-border relative rounded-lg px-5 py-14 md:px-10 md:py-20">
-        <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="text-left">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-md border border-cyan-300/20 bg-cyan-300/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-cyan-100">
-              <span className="signal-dot h-2 w-2 rounded-full bg-cyan-300 text-cyan-300" />
-              Desarrollo web / clases / materiales
-            </div>
+    <HomeMotion>
+      <section className="cyber-hero" data-hero>
+        <div className="hero-grid-glow" aria-hidden="true" data-parallax />
 
-            <h1 className="glitch mb-5 max-w-4xl text-5xl font-black uppercase leading-[0.95] tracking-normal md:text-7xl">
-              CiberPunk
-              <span className="neon-gradient block">Ecuador</span>
-            </h1>
+        <div className="hero-system-bar" data-hero-line>
+          <span>CPUNK_EC // NODE_00</span>
+          <span className="system-status">
+            <i aria-hidden="true" />
+            SISTEMA ACTIVO
+          </span>
+          <span className="hidden sm:inline">UTC−05:00 // QUITO</span>
+        </div>
 
-            <p className="max-w-2xl text-lg leading-8 text-zinc-300 md:text-xl">
-              Soluciones digitales con estetica avanzada, estructura limpia y
-              trato profesional para empresas, estudiantes y creadores que
-              necesitan presencia real en la web.
+        <div className="hero-layout">
+          <div className="hero-copy">
+            <p className="section-eyebrow" data-hero-item>
+              Tecnología desde el sur digital
             </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <h1
+              className="glitch-title"
+              data-text="HIGH TECH. LOW LIFE. IMPACTO REAL."
+              data-hero-item
+            >
+              <span>HIGH TECH.</span>
+              <span>LOW LIFE.</span>
+              <strong>IMPACTO REAL.</strong>
+            </h1>
+            <p className="hero-lede" data-hero-item>
+              Desarrollo web y educación digital con identidad propia para
+              aprender, emprender y crecer sin pedir permiso.
+            </p>
+            <p className="hero-body" data-hero-item>
+              Ciberpunk Ecuador cruza código, diseño y acompañamiento humano.
+              Tecnología útil para personas, negocios y comunidades que casi
+              nunca son el centro del discurso tecnológico.
+            </p>
+            <div className="hero-actions" data-hero-item>
               <a
-                href="https://wa.me/593983629837"
+                href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-neon-glitch px-7 py-3 text-base"
-                aria-label="Contactar por WhatsApp"
+                className="cyber-button cyber-button--primary"
               >
-                Solicita tu web o clase
+                <span>Iniciar proyecto</span>
+                <b aria-hidden="true">↗</b>
               </a>
-              <a
-                href="/servicios"
-                className="rounded-md border border-white/12 bg-white/5 px-7 py-3 text-center font-semibold text-zinc-100 transition hover:border-cyan-300/50 hover:text-cyan-100 hover:shadow-[0_0_18px_rgba(0,229,255,0.12)]"
+              <Link
+                href="/portafolio"
+                className="cyber-button cyber-button--ghost"
               >
-                Ver servicios
-              </a>
+                <span>Ver trabajo</span>
+                <b aria-hidden="true">→</b>
+              </Link>
             </div>
           </div>
 
-          <div className="neon-panel relative rounded-lg p-5">
-            <div className="absolute right-4 top-4 flex gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-fuchsia-300 shadow-[0_0_12px_rgba(255,61,242,0.9)]" />
-              <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(0,229,255,0.9)]" />
-              <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_12px_rgba(167,255,79,0.8)]" />
+          <aside className="identity-terminal" data-hero-item data-parallax>
+            <div className="terminal-corners" aria-hidden="true" />
+            <div className="terminal-head">
+              <span>IDENTIDAD://FREUDIAN_DEV</span>
+              <span>EC-UIO</span>
             </div>
-            <div className="flex min-h-80 flex-col items-center justify-center rounded-md border border-white/10 bg-black/35 p-8 text-center">
+            <div className="terminal-portrait">
+              <div className="portrait-rings" aria-hidden="true" />
               <Image
                 src={siteConfig.logoPath}
-                alt="Logo CiberPunk Ecuador"
-                width={156}
-                height={156}
+                alt="Logo de Ciberpunk Ecuador"
+                width={168}
+                height={168}
                 priority
-                className="glitch-logo mb-6 h-36 w-36 rounded-full border border-fuchsia-200 bg-white object-cover shadow-[0_0_35px_rgba(255,61,242,0.4)]"
+                className="terminal-logo"
               />
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-400">
-                Identidad digital sobria
+              <span className="portrait-index">CP_593</span>
+            </div>
+            <div className="terminal-data">
+              <p>
+                <span>ORIGEN</span>
+                <b>{siteConfig.location}</b>
               </p>
-              <div className="neon-rule my-5 w-full" />
-              <p className="max-w-sm text-sm leading-6 text-zinc-300">
-                Cyberpunk sin ruido: interfaces elegantes, mensajes directos y
-                tecnologia al servicio de resultados.
+              <p>
+                <span>MISIÓN</span>
+                <b>ACCESO + AUTONOMÍA</b>
+              </p>
+              <p>
+                <span>SEÑAL</span>
+                <b className="text-cyan-300">ABIERTA / ONLINE</b>
               </p>
             </div>
-          </div>
+            <p className="terminal-manifesto">
+              “El futuro también se construye desde abajo.”
+            </p>
+          </aside>
+        </div>
+
+        <div className="hero-coordinate" aria-hidden="true">
+          00°13′S / 78°31′W
         </div>
       </section>
 
-      <section className="grid gap-3 md:grid-cols-3">
-        {metrics.map((metric) => (
-          <div key={metric.label} className="neon-panel rounded-lg px-5 py-4">
-            <p className="text-2xl font-black text-white">{metric.value}</p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">
-              {metric.label}
-            </p>
-          </div>
-        ))}
-      </section>
+      <div className="signal-ticker" aria-label="Principios de Ciberpunk Ecuador">
+        <div className="signal-ticker__track">
+          {[...tickerItems, ...tickerItems].map((item, index) => (
+            <span key={`${item}-${index}`}>
+              {item}
+              <i aria-hidden="true">✦</i>
+            </span>
+          ))}
+        </div>
+      </div>
 
-      <section className="grid gap-4 md:grid-cols-3">
-        {services.map((service) => (
-          <article
-            key={service.title}
-            className={`neon-card rounded-lg border px-5 py-6 text-left ${service.border}`}
-          >
-            <p className={`mb-4 font-mono text-xs uppercase tracking-[0.18em] ${service.accent}`}>
-              {service.eyebrow}
-            </p>
-            <h2 className="mb-3 text-2xl font-extrabold text-white">
-              {service.title}
-            </h2>
-            <p className="leading-7 text-zinc-300">{service.text}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="neon-panel rounded-lg px-5 py-8 md:px-8">
-        <div className="grid gap-6 md:grid-cols-[0.75fr_1fr] md:items-center">
+      <section className="services-block" data-reveal>
+        <div className="section-heading">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-fuchsia-200">
-              Confianza profesional
-            </p>
-            <h3 className="mt-3 text-3xl font-black text-white">
-              Diseno llamativo, ejecucion seria.
-            </h3>
+            <p className="section-eyebrow">Capacidades / 001—003</p>
+            <h2>Soluciones con pulso humano.</h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            <blockquote className="rounded-lg border border-fuchsia-300/20 bg-black/25 p-5 text-left italic text-zinc-300">
-              Aprendi a programar desde cero y ahora hago mis propios proyectos.
-              <span className="mt-3 block font-mono text-sm not-italic text-cyan-200">
-                Estudiante, Quito
-              </span>
-            </blockquote>
-            <blockquote className="rounded-lg border border-cyan-300/20 bg-black/25 p-5 text-left italic text-zinc-300">
-              El sitio de mi emprendimiento quedo unico, rapido y facil de
-              entender.
-              <span className="mt-3 block font-mono text-sm not-italic text-fuchsia-200">
-                Emprendedora, Tarqui
-              </span>
-            </blockquote>
-          </div>
+          <p>
+            Tecnología profesional sin el lenguaje inflado ni la distancia de
+            las grandes agencias.
+          </p>
+        </div>
+
+        <div className="service-grid">
+          {services.map((service) => (
+            <SpotlightCard
+              key={service.title}
+              className="service-node"
+              color={service.color}
+            >
+              <div className="service-node__top">
+                <span>{service.code}</span>
+                <b aria-hidden="true">{service.glyph}</b>
+              </div>
+              <div>
+                <h3>{service.title}</h3>
+                <p>{service.body}</p>
+              </div>
+              <Link href={service.href} className="node-link">
+                Explorar nodo <span aria-hidden="true">↗</span>
+              </Link>
+            </SpotlightCard>
+          ))}
         </div>
       </section>
-    </div>
+
+      <section className="manifesto-band" data-reveal>
+        <div className="manifesto-band__index" aria-hidden="true">
+          <span>MANIFIESTO</span>
+          <b>01</b>
+        </div>
+        <div className="manifesto-band__copy">
+          <p>No vendemos futuro en una caja.</p>
+          <h2>
+            Lo construimos contigo,
+            <span> desde tu realidad.</span>
+          </h2>
+        </div>
+        <p className="manifesto-band__body">
+          High tech no debería significar inaccesible. Diseñamos herramientas
+          digitales con potencia técnica, precio justo y acompañamiento cercano.
+        </p>
+      </section>
+
+      <section className="capability-section" data-reveal>
+        <div className="section-heading section-heading--compact">
+          <div>
+            <p className="section-eyebrow">Matriz operativa</p>
+            <h2>Qué hacemos distinto.</h2>
+          </div>
+          <span className="section-code">CPUNK / MATRIX_04</span>
+        </div>
+
+        <div className="capability-grid">
+          {capabilities.map((capability, index) => (
+            <SpotlightCard
+              key={capability.code}
+              className="capability-node"
+              color={
+                index % 2
+                  ? "rgba(244, 114, 182, 0.14)"
+                  : "rgba(34, 211, 238, 0.14)"
+              }
+            >
+              <span className="capability-node__code">
+                {capability.code} / 0{index + 1}
+              </span>
+              <h3>{capability.title}</h3>
+              <p>{capability.body}</p>
+              <i aria-hidden="true" />
+            </SpotlightCard>
+          ))}
+        </div>
+      </section>
+
+      <section className="transmissions" data-reveal>
+        <div className="transmissions__intro">
+          <p className="section-eyebrow">Transmisiones recibidas</p>
+          <h2>Resultados que hablan sin filtro.</h2>
+          <p>
+            Proyectos pequeños también merecen procesos claros, diseño serio y
+            herramientas que funcionen.
+          </p>
+        </div>
+
+        <div className="transmission-list">
+          <blockquote className="transmission">
+            <div className="transmission__head">
+              <Image
+                src={avatarArt}
+                alt=""
+                width={52}
+                height={52}
+                className="transmission__avatar"
+              />
+              <div>
+                <span>MSG_01 // ESTUDIANTE</span>
+                <b>QUITO, ECUADOR</b>
+              </div>
+            </div>
+            <p>
+              “Aprendí a programar desde cero y ahora puedo construir mis propios
+              proyectos con más confianza.”
+            </p>
+          </blockquote>
+          <blockquote className="transmission">
+            <div className="transmission__head">
+              <Image
+                src={avatarArt}
+                alt=""
+                width={52}
+                height={52}
+                className="transmission__avatar transmission__avatar--pink"
+              />
+              <div>
+                <span>MSG_02 // EMPRENDEDORA</span>
+                <b>TARQUI, ECUADOR</b>
+              </div>
+            </div>
+            <p>
+              “Mi página quedó con identidad propia y el proceso se sintió claro,
+              acompañado y sin vueltas raras.”
+            </p>
+          </blockquote>
+        </div>
+      </section>
+    </HomeMotion>
   );
 }

@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.git
+.github
+.vercel
+npm-debug.log*
+Dockerfile*
+docker-compose*.yml
+README.md

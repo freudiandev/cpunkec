@@ -1,14 +1,55 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Clases",
+  description:
+    "Clases personalizadas de HTML, CSS, JavaScript y lógica de programación con acompañamiento humano desde Quito.",
+};
+
+const classFormats = [
+  "Inicio desde cero para personas con miedo o poca experiencia.",
+  "Refuerzo para estudiantes, emprendedores y autodidactas.",
+  "Acompañamiento uno a uno para practicar con proyectos reales.",
+];
+
 export default function ClasesPage() {
   return (
-    <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 py-16 my-8 bg-black text-zinc-100 rounded-2xl shadow-xl border border-fuchsia-700/30">
-      <h1 className="text-4xl md:text-5xl font-bold neon-gradient mb-4">Clases de Desarrollo Web</h1>
-      <p className="max-w-2xl text-lg md:text-xl mb-6 text-zinc-300">
-        Aprende HTML, CSS y JavaScript desde cero absoluto. También creación de minijuegos en navegador.<br />
-        Para niños, jóvenes, adultos y adultos mayores.<br />
-        <span className="font-bold text-fuchsia-400">$5</span> por hora y media.<br />
-        <span className="font-bold text-turquoise-400">Gratis</span> para personas vulnerables.
+    <section className="glass-card rounded-[2.5rem] px-6 py-10 md:px-10 md:py-12">
+      <p className="section-eyebrow">Clases</p>
+      <h1 className="mt-4 text-4xl font-black text-white md:text-5xl">
+        Clases personalizadas de desarrollo web
+      </h1>
+      <p className="mt-5 max-w-3xl text-lg leading-8 text-zinc-300">
+        Aprende HTML, CSS, JavaScript, lógica de programación y bases reales de
+        construcción web sin jerga inflada y sin presión innecesaria.
       </p>
-      <a href="https://wa.me/593983629837" target="_blank" rel="noopener" className="btn-neon-glitch text-lg px-8 py-3 mt-4">¡Reserva tu clase!</a>
+
+      <div className="mt-8 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid gap-4">
+          {classFormats.map((item) => (
+            <div key={item} className="metric-card text-sm leading-7 text-zinc-300">
+              {item}
+            </div>
+          ))}
+        </div>
+        <div className="rounded-[2rem] border border-cyan-300/20 bg-cyan-300/8 p-6">
+          <p className="text-xs uppercase tracking-[0.35em] text-cyan-300/70">Formato</p>
+          <div className="mt-4 grid gap-3 text-sm leading-7 text-zinc-300">
+            <p>Duración referencial: 1 hora y media.</p>
+            <p>Valor base: $5 por sesión.</p>
+            <p>Gratis para personas vulnerables cuando haya posibilidad real de apoyo.</p>
+          </div>
+          <a
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex rounded-full bg-fuchsia-500 px-6 py-3 text-sm font-semibold tracking-[0.2em] text-slate-950 transition hover:bg-fuchsia-400"
+          >
+            Reservar clase
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
