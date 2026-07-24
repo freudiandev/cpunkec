@@ -19,6 +19,13 @@ const nextConfig: NextConfig = {
         hostname: "www.impermeabilizacion.uio.ec",
         pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "ecuadorfirma.me",
+        pathname: "/social-image",
+        search:
+          "?title=ContaLink+%7C+Firma+Electr%C3%B3nica+y+Contabilidad+en+Ecuador&description=Firma+electr%C3%B3nica+Uanataca+y+asesor%C3%ADa+contable+y+tributaria+en+Quito%2C+con+atenci%C3%B3n+digital+para+todo+Ecuador.",
+      },
     ],
   },
 };

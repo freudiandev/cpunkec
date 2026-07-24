@@ -11,6 +11,18 @@ export type PortfolioItem = {
 
 export const portfolioItems: PortfolioItem[] = [
   {
+    title: "ContaLink",
+    url: "https://ecuadorfirma.me",
+    category: "Servicios profesionales / firma electrónica",
+    stack: "Next.js / SEO local / conversión",
+    description:
+      "Sitio profesional para firma electrónica, contabilidad y asesoría tributaria en Ecuador, con arquitectura clara, posicionamiento local y contacto orientado a conversión.",
+    thumbnail:
+      "https://ecuadorfirma.me/social-image?title=ContaLink+%7C+Firma+Electr%C3%B3nica+y+Contabilidad+en+Ecuador&description=Firma+electr%C3%B3nica+Uanataca+y+asesor%C3%ADa+contable+y+tributaria+en+Quito%2C+con+atenci%C3%B3n+digital+para+todo+Ecuador.",
+    source: "metadata",
+    featured: true,
+  },
+  {
     title: "La Data",
     url: "https://ladataec.com",
     category: "Medio digital / noticias",
@@ -22,17 +34,6 @@ export const portfolioItems: PortfolioItem[] = [
     featured: true,
   },
   {
-    title: "Propiedad en Tumbabiro",
-    url: "https://freudiandev.github.io/Vendo-Hermosa-propiedad-TUMBABIRO--IMBABURA-80-000/",
-    category: "Landing inmobiliaria",
-    stack: "HTML / CSS / contenido comercial",
-    description:
-      "Landing orientada a venta de propiedad con enfoque emocional, información clara y apoyo visual para captar compradores reales.",
-    thumbnail:
-      "https://freudiandev.github.io/Vendo-Hermosa-propiedad-TUMBABIRO--IMBABURA-80-000/assets/img/2.jpg",
-    source: "metadata",
-  },
-  {
     title: "Noboa de Cartón",
     url: "https://freudiandev.github.io/practicatironoboacarton/",
     category: "Juego web / sátira",
@@ -42,17 +43,6 @@ export const portfolioItems: PortfolioItem[] = [
     thumbnail: "https://freudiandev.github.io/practicatironoboacarton/menu-bg.jpeg",
     source: "metadata",
     featured: true,
-  },
-  {
-    title: "Vendedora a Crédito Quito",
-    url: "https://freudiandev.github.io/vendedoracreditoquitoecuador/",
-    category: "Landing comercial",
-    stack: "HTML / CSS / ventas",
-    description:
-      "Sitio comercial para promoción de tecnología, motos y electrodomésticos con lenguaje cercano, enfoque de conversión y contacto rápido.",
-    thumbnail:
-      "https://freudiandev.github.io/vendedoracreditoquitoecuador/assets/images/vendedor_1.jpeg",
-    source: "metadata",
   },
   {
     title: "Hanansoft",
